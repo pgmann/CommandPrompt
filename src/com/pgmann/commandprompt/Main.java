@@ -121,7 +121,7 @@ public class Main {
 		FontMetrics fm = frame.getGraphics().getFontMetrics(normal);
 		int width = fm.stringWidth(workingDir+">");
 		int line = log.getLineCount();
-		if(line>4) line=44;
+		if(line>44) line=44;
 		
 		// Set the position
 		input.setLocation(10+width, 10+line*14/*620*/);
