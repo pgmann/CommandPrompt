@@ -31,6 +31,7 @@ public class Main {
 	int prevMax;
 	Font normal = new Font("Consolas", Font.PLAIN, 16);
 	String workingDir = System.getProperty("user.dir");
+	RunCommand lastCommand;
 	
 	public static void main(String[] args) {
 		ref=new Main();
@@ -89,13 +90,15 @@ public class Main {
 			public void actionPerformed(ActionEvent e) {
 				String command = input.getText();
 				if(command.length() != 0) {
-					if (command.equalsIgnoreCase("exit")) {
+					if (lastCommand != null && lastCommand.isAlive() && lastCommand.writer != null) {
+						lastCommand.writer.println(command);
+					} else if (command.equalsIgnoreCase("exit")) {
 						System.exit(0);
 					} else if (command.length() >= 5 && command.substring(0,5).equalsIgnoreCase("title")) {
 						frame.setTitle(command.substring(5));
 					} else {
 						// Run the command
-						new RunCommand(command, ref).start();
+						lastCommand = new RunCommand(command, ref).start();
 						System.out.println(command);
 					}
 					input.setText("");
