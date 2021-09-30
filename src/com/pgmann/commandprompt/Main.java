@@ -98,7 +98,7 @@ public class Main {
 						frame.setTitle(command.substring(5));
 					} else {
 						// Run the command
-						lastCommand = new RunCommand(command, ref)
+						lastCommand = new RunCommand(command, ref);
 						lastCommand.start();
 						System.out.println(command);
 					}
