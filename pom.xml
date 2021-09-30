@@ -1,0 +1,72 @@
+<!--
+  ~ This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+  ~ If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.pgmann</groupId>
+    <artifactId>CommandPrompt</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <name>CommandPrompt</name>
+    <url>http://github.com/pgmann/CommandPrompt</url>
+    <description>This is a Java swing command prompt emulator; see
+        http://github.com/pgmann/CommandPrompt for the source and README.
+    </description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <issueManagement>
+        <system>Github Issues</system>
+        <url>http://github.com/pgmann/CommandPrompt/issues</url>
+    </issueManagement>
+
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <resources>
+            <resource>
+                <targetPath>.</targetPath>
+                <filtering>true</filtering>
+                <directory>${basedir}/src/main/resources/</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <targetPath>.</targetPath>
+                <filtering>true</filtering>
+                <directory>${basedir}/</directory>
+                <includes>
+                    <include>res/*</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+    </repositories>
+
+    <dependencies>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>pgmann-public</id>
+            <name>pgmann's public maven repo</name>
+            <url>https://repo.repsy.io/mvn/pgmann/public</url>
+        </repository>
+    </distributionManagement>
+</project>
