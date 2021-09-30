@@ -30,18 +30,10 @@
             <resource>
                 <targetPath>.</targetPath>
                 <filtering>true</filtering>
-                <directory>${basedir}/src/main/resources/</directory>
+                <directory>${basedir}/res</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
                 </excludes>
-            </resource>
-            <resource>
-                <targetPath>.</targetPath>
-                <filtering>true</filtering>
-                <directory>${basedir}/</directory>
-                <includes>
-                    <include>res/*</include>
-                </includes>
             </resource>
         </resources>
         <plugins>
